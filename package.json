@@ -1,0 +1,22 @@
+{
+  "name": "critical-journey-e2e-test",
+  "version": "1.0.0",
+  "description": "critical user journey for Unibuddy customers:",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cypress open "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoKalna/critical-journey-e2e-test.git"
+  },
+  "author": "Jo K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoKalna/critical-journey-e2e-test/issues"
+  },
+  "homepage": "https://github.com/JoKalna/critical-journey-e2e-test#readme",
+  "dependencies": {
+    "cypress": "^9.1.0"
+  }
+}
