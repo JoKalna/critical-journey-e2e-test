@@ -18,5 +18,8 @@
   "homepage": "https://github.com/JoKalna/critical-journey-e2e-test#readme",
   "dependencies": {
     "cypress": "^9.1.0"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3"
   }
 }

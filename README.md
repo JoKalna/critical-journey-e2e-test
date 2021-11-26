@@ -16,3 +16,6 @@ Below command will open cypress test runner and run all existing tests in the pr
 
 ``npm run tests``
 
+### 3. Plug-ins
+Using plug in called faker to help me generate random data for the registration form 
+https://www.npmjs.com/package/faker

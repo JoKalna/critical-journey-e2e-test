@@ -1,10 +1,10 @@
-describe('Student choosing a mentor to chat with', () => {
-    before(() => {
-        // beforeEach function used so that it runs before each test
-        cy.visit('/')
-        cy.get('#onetrust-accept-btn-handler').click()
-    })
+beforeEach(() => {
+    // beforeEach function used so that it runs before each test
+    cy.visit('https://unibuddy.co/pwa/demo-university')
+    cy.get('#onetrust-accept-btn-handler').click()
+})
 
+describe('Student choosing a mentor to chat with', () => {
     // check if grid has at least one child visibile for the selected option
     function verifyGrid() {
         cy.get('._91w > :nth-child(1)')
