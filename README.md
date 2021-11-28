@@ -1,7 +1,6 @@
 # What is it?
 
-This is a cypress end to end critical user journey for Unibuddy customers written in cypress.io
-
+This is a cypress end to end critical user journey test for Unibuddy customers written in [cypress.io](https://www.cypress.io/) 
 
 # Run Tests locally
 ## 1. Install Dependencies
@@ -15,6 +14,10 @@ This should include downloading cypress as a dependency so you don't need to dow
 Below command will open cypress test runner and run all existing tests in the project.
 
 ``npm run tests``
+
+To run cypress in headless mode:
+
+```npm run headless```
 
 ### 3. Plug-ins
 Using plug in called faker to help me generate random data for the registration form 
