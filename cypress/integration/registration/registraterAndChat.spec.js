@@ -2,16 +2,7 @@ beforeEach(() => {
     // beforeEach function used so that it runs before each test
     cy.visit('https://unibuddy.co/pwa/demo-university/auth/register')
     cy.get('#onetrust-accept-btn-handler').click()
-    cy.viewport(1024, 768)
-
 })
-
-function privacyAndStartToChatSubmition() {
-    cy.get('#privacy')
-        .click()
-    cy.get('#continue')
-        .click()
-}
 
 let user;
 
@@ -38,7 +29,7 @@ describe('First Registration page that Student is presented in order to start to
         cy.get('#confirm-password')
             .type(user.password)
             .should('not.contain', 'a required field')
-        privacyAndStartToChatSubmition()
+        cy.privacyAndStartToChatSubmitionBtn()
         // assert name matches(user.firstName) ? 
         cy.get('#country > .css-1uxuzzt-control > .css-1hwfws3').click()
         cy.get('[id^="react-select-2-option"]').then(option => {
@@ -71,7 +62,7 @@ describe('First Registration page that Student is presented in order to start to
         cy.get('[data-test-id="chat-input-field"]')
             .type(user.chatSentence)
         cy.get('[data-test-id="chat-input-send-Desktop"]')
-            .click() 
+            .click()
 
         // should get this assertion working! 
         // cy.get('[data-test-id="chat-message-bubble"] span[class^=_3npN]')

@@ -1,9 +1,9 @@
 beforeEach(() => {
-    // best would be reuse the session from previous test in chooseMentor.spec.js 
+    // best would be reuse the accessToken from previous test in chooseMentor.spec.js 
     cy.visit('/inbox/pre/609e54cf6eca6d2bbb0ff086?buddyPosition=1')
     cy.get('#onetrust-accept-btn-handler').click()
 })
-describe('Student presented with chat screen pre-reg process', () => {
+describe('Student presented with the chat screen pre-reg process', () => {
 
     it('should have Create your account displayed in the chat box', () => {
         cy.get('[data-test-id="chat-container"] div[class^=tzcn]')
