@@ -19,3 +19,4 @@ Below command will open cypress test runner and run all existing tests in the pr
 ### 3. Plug-ins
 Using plug in called faker to help me generate random data for the registration form 
 https://www.npmjs.com/package/faker
+https://www.tabnine.com/code/javascript/functions/faker/country 
