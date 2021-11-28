@@ -13,7 +13,7 @@ function privacyAndStartToChatSubmition() {
 
 let user;
 
-describe('Student choosing a mentor to chat with', () => {
+describe('First Registration page that Student is presented in order to start to chat with mentor', () => {
     before(function () {
         cy.task("registerNewUser").then((object) => {
             user = object;
@@ -25,13 +25,17 @@ describe('Student choosing a mentor to chat with', () => {
             .should('not.contain', 'a required field') // assert that no validation is pressent
         cy.get('#last-name')
             .type(user.lastName)
+            .should('not.contain', 'a required field')
         cy.get('#email')
             .type(user.email)
+            .should('not.contain', 'a required field')
         cy.get('#password')
             .type(user.password)
+            .should('not.contain', 'a required field')
         // will use the same password as previously
         cy.get('#confirm-password')
             .type(user.password)
+            .should('not.contain', 'a required field')
         privacyAndStartToChatSubmition()
     })
     it('should display correct validation for fields when click Start to chat button', () => {
@@ -51,7 +55,8 @@ describe('Student choosing a mentor to chat with', () => {
             .should('contain', 'Privacy Policy must be checked')
     })
 
-    it.only('should display correct validation for incorrect email submition attempt', () => {
+    // should really check just email verification 
+    it('should display correct validation for incorrect email submition attempt', () => {
         cy.get('#email')
             .type('te{enter}')
         cy.get('#email-error')
@@ -77,6 +82,7 @@ describe('Student choosing a mentor to chat with', () => {
         cy.get('[data-test-id="error-message-text"]')
             .should('contain', 'Please enter a valid email, password and name')
     })
+    // add assertion for password field 
 
 
 })
