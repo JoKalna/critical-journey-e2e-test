@@ -4,7 +4,7 @@ beforeEach(() => {
     cy.get('#onetrust-accept-btn-handler').click()
 })
 
-function privacyAndStartToChat() {
+function privacyAndStartToChatSubmition() {
     cy.get('#privacy')
         .click()
     cy.get('#continue')
@@ -32,7 +32,7 @@ describe('Student choosing a mentor to chat with', () => {
         // will use the same password as previously
         cy.get('#confirm-password')
             .type(user.password)
-        //  privacyAndStartToChat()
+        privacyAndStartToChatSubmition()
     })
     it('should display correct validation for fields when click Start to chat button', () => {
         cy.get('#continue')
@@ -73,7 +73,7 @@ describe('Student choosing a mentor to chat with', () => {
             .type('KalpKlap')
         cy.get('#confirm-password')
             .type('KalpKlap')
-        privacyAndStartToChat()
+        privacyAndStartToChatSubmition()
         cy.get('[data-test-id="error-message-text"]')
             .should('contain', 'Please enter a valid email, password and name')
     })
