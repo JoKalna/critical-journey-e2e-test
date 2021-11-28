@@ -4,7 +4,8 @@
   "description": "critical user journey for Unibuddy customers:",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cypress open "
+    "cy:open": "./node_modules/.bin/cypress open ",
+    "cy:headless": "cypress run"
   },
   "repository": {
     "type": "git",

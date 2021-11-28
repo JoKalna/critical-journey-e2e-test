@@ -2,17 +2,7 @@ beforeEach(() => {
     // beforeEach function used so that it runs before each test
     cy.visit('https://unibuddy.co/pwa/demo-university/auth/register')
     cy.get('#onetrust-accept-btn-handler').click()
-    cy.viewport(1024, 768)
-
 })
-
-function privacyAndStartToChatSubmition() {
-    cy.get('#privacy')
-        .click()
-    cy.get('#continue')
-        .click()
-}
-
 let user;
 
 describe('First Registration page where validation is checked', () => {
@@ -33,7 +23,7 @@ describe('First Registration page where validation is checked', () => {
             .should('contain', 'Privacy Policy must be checked')
     })
 
-    // should really check just email verification 
+    // improvement needed : should really check just email verification 
     it('should display correct validation for incorrect email submition attempt', () => {
         cy.get('#email')
             .type('te{enter}')
@@ -56,7 +46,7 @@ describe('First Registration page where validation is checked', () => {
             .type('KalpKlap')
         cy.get('#confirm-password')
             .type('KalpKlap')
-        privacyAndStartToChatSubmition()
+        cy.privacyAndStartToChatSubmitionBtn()
         cy.get('[data-test-id="error-message-text"]')
             .should('contain', 'Please enter a valid email, password and name')
     })

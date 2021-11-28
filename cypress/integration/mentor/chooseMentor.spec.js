@@ -5,10 +5,10 @@ beforeEach(() => {
 })
 
 describe('Student choosing a mentor to chat with', () => {
-    // check if grid has at least one child visibile for the selected option
+    // check if grid has at least one student visibile for the selected option
     function verifyGrid() {
-        cy.get('._91w > :nth-child(1)')
-            .should('be.visible')
+        cy.get('#mentors-container > div._91w._3b9F > div')
+            .should('have.length.greaterThan', 1);
     }
 
     it('should select Area of Study, Levels and Country', () => {
@@ -16,7 +16,7 @@ describe('Student choosing a mentor to chat with', () => {
         cy.get('#mentor-filter-degree > div > div.css-1hwfws3')
             .click()
         cy.get('#react-select-2-option-5')
-            .click({ force: true })
+            .click()
         // verify if selected Area of Study is displayed as label                                       
         cy.get('#remove-label')
             .should('exist');
@@ -25,7 +25,7 @@ describe('Student choosing a mentor to chat with', () => {
         cy.get('#mentor-filter-degree_level > .css-1ns25le > .css-1hwfws3')
             .click()
         cy.get('#react-select-3-option-0')
-            .click({ force: true })
+            .click()
         cy.get('._UcR > :nth-child(2)')
             .should('exist');
         verifyGrid()
@@ -33,7 +33,7 @@ describe('Student choosing a mentor to chat with', () => {
         cy.get('#mentor-filter-country > .css-1ns25le > .css-1hwfws3')
             .click()
         cy.get('#react-select-4-option-0')
-            .click({ force: true })
+            .click()
         cy.get('._UcR > :nth-child(3)')
             .should('exist');
         verifyGrid()
@@ -41,6 +41,7 @@ describe('Student choosing a mentor to chat with', () => {
         // verify and click on chat button
         cy.get(':nth-child(1) > ._2qHr > ._1lC1')
             .should('contain', 'Chat with')
-            .click({ force: true })
+            .click()
+
     })
 })
