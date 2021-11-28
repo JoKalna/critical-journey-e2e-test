@@ -25,7 +25,9 @@ module.exports = (on, config) => {
                 firstName: faker.name.firstName(),
                 lastName: faker.name.lastName(),
                 email: faker.internet.email(),
-                password: faker.internet.password()
+                password: faker.internet.password(),
+                country: faker.address.country(),
+                chatSentence: faker.lorem.sentence()
             };
             return user;
         },
