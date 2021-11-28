@@ -6,13 +6,15 @@ beforeEach(() => {
 
 let user;
 
-describe('First Registration page that Student is presented in order to start to chat with mentor', () => {
+describe('Registration page where user fills in details and able to send the first message to the mentor', () => {
     before(function () {
         cy.task("registerNewUser").then((object) => {
             user = object;
         })
     })
     it('should fill registration form', () => {
+
+        //First part of the registration form    
         cy.get('#first-name')
             .type(user.firstName)
             .should('not.contain', 'a required field') // assert that no validation is pressent
@@ -30,7 +32,9 @@ describe('First Registration page that Student is presented in order to start to
             .type(user.password)
             .should('not.contain', 'a required field')
         cy.privacyAndStartToChatSubmitionBtn()
-        // assert name matches(user.firstName) ? 
+        //Second part of registration form
+        cy.get('[id="content"] > h1')
+            .should('contain', user.firstName)
         cy.get('#country > .css-1uxuzzt-control > .css-1hwfws3').click()
         cy.get('[id^="react-select-2-option"]').then(option => {
             option[12].click()
@@ -46,7 +50,7 @@ describe('First Registration page that Student is presented in order to start to
         cy.get('[id^="react-select-4-option"]').then(option => {
             option[1].click()
         })
-        // for some reason this did not come up when I am using the cypress test runner so had to use '[data-test-id="label-marketing"]') to proceed
+        // Possible bug? for some reason below does not come up all the time (manually and automated verified) so had to use'[data-test-id="label-marketing"]') to proceed
         // cy.get('[data-test-id="label-privacy"]').click()
         cy.get('[data-test-id="label-marketing"]')
             .click();
@@ -63,14 +67,11 @@ describe('First Registration page that Student is presented in order to start to
             .type(user.chatSentence)
         cy.get('[data-test-id="chat-input-send-Desktop"]')
             .click()
-
         // should get this assertion working! 
-        // cy.get('[data-test-id="chat-message-bubble"] span[class^=_3npN]')
+        // cy.get('[data-test-id="chat-body-scroll"] > div > ul')
+        //     .find('li').as('userInputtedText')
+        // cy.get('@userInputtedText')
         //     .should('eq', user.chatSentence);
-
-        // should verify that BA media is found
-        // cy.get('#degrees > div.css-1uxuzzt-control > div.css-1hwfws3 > div.css-1rxz0c-multiValue > div.css-7gynj3')
-        //     .should('contain', 'BA Media')
     })
 
 })

@@ -2,8 +2,6 @@ beforeEach(() => {
     // beforeEach function used so that it runs before each test
     cy.visit('https://unibuddy.co/pwa/demo-university/auth/register')
     cy.get('#onetrust-accept-btn-handler').click()
-    cy.viewport(1024, 768)
-
 })
 let user;
 
