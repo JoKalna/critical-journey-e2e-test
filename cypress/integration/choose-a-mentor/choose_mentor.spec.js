@@ -4,7 +4,7 @@ beforeEach(() => {
     cy.get('#onetrust-accept-btn-handler').click()
 })
 
-describe('Student choosing a mentor to chat with', () => {
+describe('Student choosing a mentor to chat with by selecting appropriate filters', () => {
     // check if grid has at least one student visibile for the selected option
     function verifyGrid() {
         cy.get('#mentors-container > div._91w._3b9F > div')
