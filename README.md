@@ -11,7 +11,8 @@ This should include downloading cypress as a dependency so you don't need to dow
 ``npm install``
 
 ## 2. Run Tests
-Below command will open cypress test runner and run all existing tests in the project.
+Below command will open Cypress Test Runner where you can run tests in this project.
+Tests are split up inside integration folder. This is to help follow [best practice](https://docs.cypress.io/guides/references/best-practices)
 
 ``npm run cy:open``
 
