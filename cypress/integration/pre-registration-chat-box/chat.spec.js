@@ -3,7 +3,7 @@ beforeEach(() => {
     cy.visit('/pwa/demo-university/inbox/pre/6123c95f97f1a2234816332d?buddyPosition=1')
     cy.get('#onetrust-accept-btn-handler').click()
 })
-describe('Student presented with the chat screen during pre-reg process', () => {
+describe('Student is presented with the chat screen during pre-reg process', () => {
 
     it('should have `Create your account` displayed in the chat container', () => {
         cy.get('[data-test-id="chat-container"] div[class^=tzcn]')

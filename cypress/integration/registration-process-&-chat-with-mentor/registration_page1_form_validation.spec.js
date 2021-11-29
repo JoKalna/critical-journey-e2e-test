@@ -31,7 +31,7 @@ describe('First Registration page where validation is checked', () => {
             .should('contain', 'Please enter a valid email address')
     })
 
-    // Improvement -  Below code checks that the start to chat button does not allow enter incorrect data.
+    // Possible improvement -  Below code checks that the `start to chat` button does not allow enter incorrect data.
     // In theory this should really be told sooner to the student so they don't get as far as trying to submit rubish data. 
 
     it('should display correct validation for Start To Chat button after trying to register with unnacaptable submittion', () => {
